@@ -1,41 +1,63 @@
-# TypeScript Next.js example
+# サンプル: Next.js + TypeScript + Storybook
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+- [Storybook](https://606c1a499e0b0a0021a0b55c-rgucjhnali.chromatic.com/?path=/story/src-compoents-apptitle-tsx--default)
+- [Vercel](https://next-story-book.vercel.app/)
 
-## Deploy your own
+## 概要
+>Storybookは、React、Vue、AngularなどのUIコンポーネントを分離して開発するためのオープンソースツールです。これにより、見事なUIを整理して効率的に構築できます。[公式ドキュメント](https://storybook.js.org/)
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+>Storybook は開発時にアプリケーションと並行して動きます。Storybook を使用することで、UI コンポーネントをビジネスロジックやコンテキストから切り離して開発できるようになります。[公式チュートリアル](https://storybook.js.org/tutorials/intro-to-storybook/react/ja/get-started/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
+<br />
+<br />
 
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
+## とりあえず動かしてみる
 ```bash
-npx create-next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
+git clone https://github.com/mizushima1226/next-story-book.git
+yarn install
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+[http://localhost:6006/?path=/story/src-compoents-apptitle-tsx--default](http://localhost:6006/?path=/story/src-compoents-apptitle-tsx--default)
 
-## Notes
+- `UserList.tsx`と`UserList.stories.tsx`がいい参考になるかも👀
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+<br />
+<br />
 
-```
-npm install --save-dev typescript
-```
+## できること
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+### 1.各コンポーネントのカタログを作れる
+- １箇所で全てのコンポーネントの見た目を確認できるのでレビューとかしやすい
+- 「読み込み中の時」「エラーの時」など状態を作り出してUIを確認できるのでテストしやすい
 
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+<img src="./asset/catalog.gif" alt="" />
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+<br />
+<br />
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+### 2.アドオンを追加すると「スナップショッとテスト」が作成できる
+- チュートリアルのReactプロジェクトで作成したので本サンプルでも導入したい
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+[参考：公式チュートリアル(単純なコンポーネント)](https://storybook.js.org/tutorials/intro-to-storybook/react/ja/simple-component/)
+<br />
+<br />
+
+### Jestによる単体テスト
+- チュートリアルのReactプロジェクトで確認済み。後日、本サンプルにもJestを導入→動作確認
+
+[参考：公式チュートリアル(複合的なコンポーネント)](https://storybook.js.org/tutorials/intro-to-storybook/react/ja/composite-component/)
+<br />
+<br />
+
+### 3.ビジュアルテストができる
+- レイアウトや色、サイズ、コントラストなどの見た目の変更を検出できる
+- 本サンプルには未導入。今後導入したい。
+
+<img src="./asset/visual.gif" alt="" />
+
+<br />
+<br />
+
+## やりたいこと
+スナップショットテスト、単体テスト、ビジュアルテストの３つのテストをCI(GitHubAction)に追加する
+<img src="./asset/cdd-review-workflow.png" alt="" />
