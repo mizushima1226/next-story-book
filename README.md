@@ -14,7 +14,14 @@
 ## とりあえず動かしてみる
 ```bash
 git clone https://github.com/mizushima1226/next-story-book.git
+cd next-story-book
 yarn install
+yarn storybook
+```
+
+もしかしたら必要かも。。。
+```bash
+npx -p @storybook/cli sb init
 ```
 
 [http://localhost:6006/?path=/story/src-compoents-apptitle-tsx--default](http://localhost:6006/?path=/story/src-compoents-apptitle-tsx--default)
