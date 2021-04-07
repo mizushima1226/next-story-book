@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import { PrimaryButton } from "../components/PrimaryButton";
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
@@ -9,6 +10,8 @@ const IndexPage = () => (
         <a>About</a>
       </Link>
     </p>
+    <br />
+    <PrimaryButton>ボタン</PrimaryButton>
   </Layout>
 )
 

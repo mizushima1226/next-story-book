@@ -5,7 +5,7 @@ import { UserList, Props } from "./UserList";
 export default {
   component: UserList,
   title: 'src/compoents/UserList.tsx',
-  includeStories: ['Default','Loading', 'Error'],
+  // includeStories: ['Default','Loading', 'Error'],
 } as Meta;
 
 const Template: Story<Props> = args => <UserList {...args} />
