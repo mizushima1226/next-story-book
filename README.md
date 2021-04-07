@@ -1,6 +1,6 @@
 # サンプル: Next.js + TypeScript + Storybook
 
-- [Storybook](https://606c1a499e0b0a0021a0b55c-rgucjhnali.chromatic.com/?path=/story/src-compoents-apptitle-tsx--default)
+- [Storybook](https://606c1a499e0b0a0021a0b55c-twyoacunyj.chromatic.com/?path=/story/src-compoents-apptitle-tsx--default)
 - [Vercel](https://next-story-book.vercel.app/)
 
 ## 概要
